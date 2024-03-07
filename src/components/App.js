@@ -6,7 +6,15 @@ import React, { useState } from "react";
 export default function App() {
   const [count, setCount] = useState(1);
 
-  console.log(count, "count");
+  function renedomGenerator() {
+    let res = Math.floor(Math.random() * Data.length);
+    if (res === 0) {
+      res = 1;
+    }
+
+    setCount(res);
+  }
+
   return (
     <>
       <div className="main">
@@ -44,6 +52,9 @@ export default function App() {
           }}
         >
           prev
+        </button>
+        <button className="random-btn" onClick={renedomGenerator}>
+          surprise me
         </button>
         <button
           className="next-btn"
