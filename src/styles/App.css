@@ -1,12 +1,46 @@
 h1 {
-    color: #27aedb;
-    text-align: center;
-    }
-    
+  color: #27aedb;
+  text-align: center;
+}
 
-button{
-    color: #27aedb;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
+button {
+  color: #27aedb;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2 {
+  text-align: center;
+}
+.main {
+  width: 300px;
+  box-shadow: 2px 2px 23px #3e5543;
+  padding: 12px;
+  border-radius: 5px;
+}
+.box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.box p {
+  font-size: 17px;
+  font-weight: 600;
+}
+.btn_box {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
