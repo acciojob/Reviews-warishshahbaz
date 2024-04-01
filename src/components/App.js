@@ -29,7 +29,7 @@ export default function App() {
       <main className="btn_box">
         <div className="review">
           <button
-            id="author-1"
+            id="author-2"
             className="prev-btn"
             onClick={() => {
               if (count > 1) {
@@ -43,7 +43,7 @@ export default function App() {
             surprise me
           </button>
           <button
-            id="author-1"
+            id="author-4"
             className="next-btn"
             onClick={() => {
               if (Data.length > count) setCount((pre) => pre + 1);
