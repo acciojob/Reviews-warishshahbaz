@@ -36,7 +36,7 @@ export default function App() {
               </div>
               <div className="box">
                 <p>Image</p>
-                <img src={val.image} alt="img" />
+                <img className="person-img" src={val.image} alt="img" />
               </div>
             </div>
           );
