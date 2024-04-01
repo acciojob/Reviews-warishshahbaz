@@ -2,6 +2,7 @@
   /* <p>Now I can render any React component on any DOM node I want using ReactDOM.render</p> */
 }
 import React, { useState } from "react";
+import Review from "./review";
 
 export default function App() {
   const [count, setCount] = useState(1);
@@ -19,28 +20,11 @@ export default function App() {
     <>
       <div className="main">
         <h2 id="review-heading">Our Reviews</h2>
-        {Data.slice(count - 1, count).map((val, i) => {
-          return (
-            <div key={val.id} className="review">
-              <div className="box">
-                <p>Author</p>
-                <span className="author">{val.name}</span>
-              </div>
-              <div className="box">
-                <p>Job</p>
-                <span className="job">{val.job}</span>
-              </div>
-              <div className="box">
-                <p>Text</p>
-                <span className="info">{val.text}</span>
-              </div>
-              <div className="box">
-                <p>Image</p>
-                <img className="person-img" src={val.image} alt="img" />
-              </div>
-            </div>
-          );
-        })}
+        <main className="review">
+          {Data.slice(count - 1, count).map((val, i) => {
+            return <Review val={val} key={i} />;
+          })}
+        </main>
       </div>
       <div className="btn_box">
         <button
