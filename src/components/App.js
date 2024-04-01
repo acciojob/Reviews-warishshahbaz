@@ -26,31 +26,33 @@ export default function App() {
           })}
         </main>
       </div>
-      <div className="btn_box">
-        <button
-          id="author-1"
-          className="prev-btn"
-          onClick={() => {
-            if (count > 1) {
-              setCount((pre) => pre - 1);
-            }
-          }}
-        >
-          prev
-        </button>
-        <button className="random-btn" onClick={renedomGenerator}>
-          surprise me
-        </button>
-        <button
-          id="author-1"
-          className="next-btn"
-          onClick={() => {
-            if (Data.length > count) setCount((pre) => pre + 1);
-          }}
-        >
-          Next
-        </button>
-      </div>
+      <main className="btn_box">
+        <div className="review">
+          <button
+            id="author-2"
+            className="prev-btn"
+            onClick={() => {
+              if (count > 1) {
+                setCount((pre) => pre - 1);
+              }
+            }}
+          >
+            prev
+          </button>
+          <button className="random-btn" onClick={renedomGenerator}>
+            surprise me
+          </button>
+          <button
+            id="author-4"
+            className="next-btn"
+            onClick={() => {
+              if (Data.length > count) setCount((pre) => pre + 1);
+            }}
+          >
+            Next
+          </button>
+        </div>
+      </main>
     </>
   );
 }
