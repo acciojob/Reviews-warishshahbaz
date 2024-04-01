@@ -27,7 +27,7 @@ export default function App() {
         </main>
       </div>
       <main className="btn_box">
-        <div className="review">
+        <div id="author-1" className="review">
           <button
             id="author-2"
             className="prev-btn"
