@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
-import people from "./data";
 
 const Review = () => {
   // const [varName,setVarName] = useState(default value of variable);
