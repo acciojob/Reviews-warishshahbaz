@@ -17,30 +17,30 @@ class Review extends React.Component {
   prevPerson = () => {
     let newIndex = this.state.index - 1;
     if (newIndex < 0) {
-      newIndex = people.length - 1;
+      newIndex = reviews.length - 1;
     }
     this.setState({ index: newIndex });
   };
 
   nextPerson = () => {
     let newIndex = this.state.index + 1;
-    if (newIndex >= people.length) {
+    if (newIndex >= reviews.length) {
       newIndex = 0;
     }
     this.setState({ index: newIndex });
   };
   randomPerson = () => {
-    let randomIndex = Math.floor(Math.random() * people.length);
+    let randomIndex = Math.floor(Math.random() * reviews.length);
     if (randomIndex === this.state.index) {
       randomIndex += 1;
     }
-    if (randomIndex >= people.length) {
+    if (randomIndex >= reviews.length) {
       randomIndex = 0;
     }
     this.setState({ index: randomIndex });
   };
   render() {
-    const { name, job, image, text } = people[this.state.index];
+    const { name, job, image, text } = reviews[this.state.index];
 
     return (
       <article className="review">

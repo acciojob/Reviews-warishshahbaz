@@ -2,10 +2,6 @@ import React from "react";
 import "./App.css";
 import Review from "./Review";
 
-// function App(){
-
-// }
-
 const App = () => {
   return (
     <main>
