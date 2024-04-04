@@ -1,7 +1,3 @@
-import React from "react";
-import "./App.css";
-import Review from "./Review";
-
 const App = () => {
   return (
     <main>

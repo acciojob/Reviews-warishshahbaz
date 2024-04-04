@@ -1,74 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 import people from "./data";
 
-class Review extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      index: 0,
-    };
+const Review = () => {
+  // const [varName,setVarName] = useState(default value of variable);
+  const [index, setIndex] = useState(0);
 
-    this.randomPerson = this.randomPerson.bind(this);
-    this.prevPerson = this.prevPerson.bind(this);
-    this.nextPerson = this.nextPerson.bind(this);
-  }
+  const { name, job, image, text } = reviews[index];
 
-  prevPerson = () => {
-    let newIndex = this.state.index - 1;
+  const prevPerson = () => {
+    let newIndex = index - 1;
     if (newIndex < 0) {
       newIndex = reviews.length - 1;
     }
-    this.setState({ index: newIndex });
+    setIndex(newIndex);
   };
-
-  nextPerson = () => {
-    let newIndex = this.state.index + 1;
+  const nextPerson = () => {
+    let newIndex = index + 1;
     if (newIndex >= reviews.length) {
       newIndex = 0;
     }
-    this.setState({ index: newIndex });
+    setIndex(newIndex);
   };
-  randomPerson = () => {
+
+  const randomPerson = () => {
     let randomIndex = Math.floor(Math.random() * reviews.length);
-    if (randomIndex === this.state.index) {
+    if (randomIndex === index) {
       randomIndex += 1;
     }
     if (randomIndex >= reviews.length) {
       randomIndex = 0;
     }
-    this.setState({ index: randomIndex });
+    setIndex(randomIndex);
   };
-  render() {
-    const { name, job, image, text } = reviews[this.state.index];
+  return (
+    <article className="review">
+      <div className="img-container">
+        <img src={image} alt={name} className="person-img" />
+        <span className="quote-icon">
+          <FaQuoteRight />
+        </span>
+      </div>
+      <h4 className="author" id={`author-${index + 1}`}>
+        {name}
+      </h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
 
-    return (
-      <article className="review">
-        <div className="img-container">
-          <img src={image} alt={name} className="person-img" />
-          <span className="quote-icon">
-            <FaQuoteRight />
-          </span>
-        </div>
-        <h4 className="author">{name}</h4>
-        <p className="job">{job}</p>
-        <p className="info">{text}</p>
-
-        <div className="button-container">
-          <button className="prev-btn" onClick={this.prevPerson}>
-            <FaChevronLeft />
-          </button>
-          <button className="next-btn" onClick={this.nextPerson}>
-            <FaChevronRight />
-          </button>
-        </div>
-        <button className="random-btn" onClick={this.randomPerson}>
-          surprise me
+      <div className="button-container">
+        <button className="prev-btn" onClick={prevPerson}>
+          <FaChevronLeft />
         </button>
-      </article>
-    );
-  }
-}
+        <button className="next-btn" onClick={nextPerson}>
+          <FaChevronRight />
+        </button>
+      </div>
+      <button className="random-btn" onClick={randomPerson}>
+        surprise me
+      </button>
+    </article>
+  );
+};
 
 export default Review;
 
